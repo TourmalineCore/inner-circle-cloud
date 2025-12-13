@@ -63,6 +63,22 @@ Open this repo's folder in VSCode, it might immediately propose you to re-open i
 When your Dev Container is ready, the VS Code window will be re-opened. Open a new terminal in this Dev Container which will be executing the commands under this prepared Linux container where we have already pre-installed and pre-configured:
 - Terraform to automatically create resources in the Yandex Cloud 
 
+### Create SSH key
+
+To create SSH that be used to log in into VM execute the following command:
+> Note: SSH key should be named as project name + environment + ssh. Example: inner-circle-prod-ssh
+
+```bash
+ssh-keygen -t ed25519 -f YOUR_FILENAME
+```
+
+Example:
+```bash
+ssh-keygen -t ed25519 -f ./inner-circle-prod-ssh
+```
+
+Specify strong passphrase. Don't leave it empty!
+
 ## Terraform
 
 ### Terraform initialization
