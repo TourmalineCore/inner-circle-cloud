@@ -50,7 +50,7 @@ variable "zone" {
 // name of project that will be used as part of name of every resource
 variable "project" {
   type = string
-  default = "home"
+  default = "inner-circle"
 }
 
 // name of environment that will be used as part of name of every resource
