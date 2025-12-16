@@ -65,7 +65,7 @@ When your Dev Container is ready, the VS Code window will be re-opened. Open a n
 
 ### Create SSH key
 
-To create SSH that be used to log in into VM execute the following command:
+To create SSH that will be used to log in into VM execute the following command:
 > Note: SSH key should be named as project name + environment + ssh. Example: inner-circle-prod-ssh
 
 ```bash
@@ -114,4 +114,3 @@ terraform validate
 To apply terraform configuration execute the following command:
 ```bash
 terraform apply -auto-approve
-```
