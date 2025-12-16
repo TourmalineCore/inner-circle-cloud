@@ -15,7 +15,7 @@ terraform {
     region    = "ru-central1"
     key       = "terraform.tfstate"
 
-    // Some of the checks weren`t implemented in Yandex Cloud, so this is the reason we`re skipping them
+    // Some of checks wasn`t realized in Yandex Cloud, so in this reason we`re skipping them
     skip_region_validation      = true
     skip_credentials_validation = true
     skip_metadata_api_check     = true
