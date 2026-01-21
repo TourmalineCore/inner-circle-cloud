@@ -73,3 +73,15 @@ variable "ssh_port" {
   type = string
   sensitive = true
 }
+
+variable "vm_cpu_cores_count" {
+  type = number
+}
+
+variable "vm_ram_in_gb" {
+  type = number
+}
+
+variable "vm_guaranteed_cpu_share_in_percent" {
+  type = number
+}

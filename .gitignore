@@ -39,3 +39,6 @@ terraform.rc
 # Ignore IAM keys
 authorized_key.json
 config.s3.tfbackend
+
+# Ignore SSH key
+*-ssh*
