@@ -24,6 +24,13 @@ terraform {
   }
 }
 
+provider "yandex" {
+  cloud_id = var.cloud_id
+  folder_id = var.folder_id
+  zone = var.zone
+  service_account_key_file = "authorized_key.json"
+}
+
 variable "cloud_id" {
   type = string
   sensitive = true
@@ -40,9 +47,29 @@ variable "zone" {
   default = "ru-central1-b"
 }
 
-provider "yandex" {
-  cloud_id = var.cloud_id
-  folder_id = var.folder_id
-  zone = var.zone
-  service_account_key_file = "authorized_key.json"
+// name of project that will be used as part of name of every resource
+variable "project" {
+  type = string
+  default = "inner-circle"
+}
+
+// name of environment that will be used as part of name of every resource
+variable "environment" {
+  type = string
+  default = "prod"
+}
+
+locals {
+  resource_name_prefix = format("%s-%s", var.project, var.environment)
+}
+
+# List of IP's that have access to VM via SSH. Should be separated by commas without spacing. Example: 8.8.8.8/32,77.88.55.88/32
+variable "protected_resources_allowed_external_ip_addresses" {
+  type = string
+  sensitive = true
+}
+
+variable "ssh_port" {
+  type = string
+  sensitive = true
 }
