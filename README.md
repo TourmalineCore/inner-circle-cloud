@@ -8,18 +8,21 @@
 ### Create new folder in Yandex Cloud
 
 1. Open [Yandex Cloud Console](https://console.yandex.cloud/cloud/)
-2. Click "Create folder" button
-3. Specify the folder name `inner-circle-prod`
-4. Unselect "Create a default network" checkbox
-5. Click "Create" button
-6. When it is created switch to this folder in the left upper corner and proceed with the instruction in the new folder.
+1. Click "Create folder" button
+1. Specify the folder name `inner-circle-prod`
+1. Unselect "Create a default network" checkbox
+1. Specify labels:
+project: inner-circle
+environment: prod
+1. Click "Create" button
+1. When it is created switch to this folder in the left upper corner and proceed with the instruction in the new folder.
 
 ### Create S3 bucket for Terraform state
 
 1. Open [Yandex Cloud Console](https://console.yandex.cloud)
 2. Navigate to "Object Storage" service using the search (ALT + S)
 3. Click "Create bucket" button
-4. Specify the bucket name `inner-circle-prod-terraform-state`, set the maximum size of the bucket to 1 GB and select "Resticted" option for all access settings.
+4. Specify the bucket name `inner-circle-prod-terraform-state`, set the maximum size of the bucket to 1 GB and select "With authorization" option for all access settings.
 5. Specify labels:
 project: inner-circle
 environment: prod
@@ -69,11 +72,6 @@ To create SSH that will be used to log in into VM execute the following command:
 > Note: SSH key should be named as project name + environment + ssh. Example: inner-circle-prod-ssh
 
 ```bash
-ssh-keygen -t ed25519 -f YOUR_FILENAME
-```
-
-Example:
-```bash
 ssh-keygen -t ed25519 -f ./inner-circle-prod-ssh
 ```
 
@@ -97,8 +95,8 @@ terraform validate
 ```
 ### Configuring terraform variables
 
-1. Open terraform.tfvars.example file
-2. Change <TO_BE_MODIFIED!!!> to your values
+1. Copy terraform.tfvars.example to a new file terraform.tfvars (it is in .gitignore)
+2. Change <TO_BE_MODIFIED!!!> in terraform.tfvars to your values
 
 > How to find Cloud ID
 > 1. Open [Yandex Cloud Center](https://center.yandex.cloud/)
