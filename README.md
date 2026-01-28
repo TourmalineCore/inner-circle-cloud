@@ -112,4 +112,6 @@ terraform validate
 
 To apply terraform configuration execute the following command:
 ```bash
-terraform apply -auto-approve
+make apply-auto-approve
+```
+>Note: to apply configuration without auto-approve flag use `make apply`
