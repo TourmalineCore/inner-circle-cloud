@@ -27,7 +27,8 @@ export const handler = async function (event, context) {
   }));
 
   var status = state.status
-
+  // status 2 is RUNNING
+  // https://github.com/yandex-cloud/nodejs-sdk/blob/45b3aba15623c30037afafd761946faae51cad00/src/generated/yandex/cloud/compute/v1/instance.ts#L160
   if (status == 2){
     const stopcommand = await instanceClient.stop(StopInstanceRequest.fromPartial({
       instanceId: INSTANCE_ID,

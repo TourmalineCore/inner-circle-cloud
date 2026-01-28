@@ -28,7 +28,8 @@ export const handler = async function (event, context) {
   }));
 
   var status = state.status
-
+  // status 4 is STOPPED
+  // https://github.com/yandex-cloud/nodejs-sdk/blob/45b3aba15623c30037afafd761946faae51cad00/src/generated/yandex/cloud/compute/v1/instance.ts#L164
   if (status == 4){
     const startcommand = await instanceClient.start(StartInstanceRequest.fromPartial({
       instanceId: INSTANCE_ID,
