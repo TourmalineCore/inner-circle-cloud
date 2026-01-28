@@ -58,7 +58,6 @@ resource "yandex_function" "stop_vm_function" {
 resource "yandex_function_trigger" "start_vm_trigger" {
   name = format("%s-start-vm-trigger", local.resource_name_prefix)
   timer {
-    // Start VM at 1:30 AM (UTC+0) every day from monday to friday
     cron_expression = var.start_vm_cron_expression
   }
   function {
@@ -70,7 +69,6 @@ resource "yandex_function_trigger" "start_vm_trigger" {
 resource "yandex_function_trigger" "stop_vm_trigger" {
   name = format("%s-stop-vm-trigger", local.resource_name_prefix)
   timer {
-    // Disable VM at 4:00 PM (UTC+0) every day from monday to friday
     cron_expression = var.stop_vm_cron_expression
   }
   function {
