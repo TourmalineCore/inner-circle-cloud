@@ -107,7 +107,6 @@ terraform validate
 > 2. Select your folder from the list on the left.
 > 3. Folder Id located near to the folder name.
 
-> Note: Now VM configured to work from Monday to Friday from 1:30 AM to 4:00 PM (UTC+0). If you wan't to specify another working time of VM, then you should configure cron_expression in functions.tf
 3. Rename terraform.tfvars.example to terraform.tfvars
 
 To apply terraform configuration execute the following command:
