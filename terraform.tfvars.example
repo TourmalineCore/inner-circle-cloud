@@ -12,3 +12,7 @@ protected_resources_allowed_external_ip_addresses="<TO_BE_MODIFIED!!!>"
 vm_cpu_cores_count="2"
 vm_ram_in_gb="4"
 vm_guaranteed_cpu_share_in_percent="5"
+# Start VM at 1:30 AM (UTC+0) every day from monday to friday
+start_vm_cron_expression="30 1 ? * MON-FRI *"
+# Disable VM at 4:00 PM (UTC+0) every day from monday to friday
+stop_vm_cron_expression="0 16 ? * MON-FRI *"
