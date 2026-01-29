@@ -85,3 +85,11 @@ variable "vm_ram_in_gb" {
 variable "vm_guaranteed_cpu_share_in_percent" {
   type = number
 }
+
+variable "start_vm_cron_expression" {
+  type = string
+}
+
+variable "stop_vm_cron_expression" {
+  type = string
+}

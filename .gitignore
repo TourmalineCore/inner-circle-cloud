@@ -42,3 +42,6 @@ config.s3.tfbackend
 
 # Ignore SSH key
 *-ssh*
+
+# Ignore start/stop VM functions
+*function-js.zip

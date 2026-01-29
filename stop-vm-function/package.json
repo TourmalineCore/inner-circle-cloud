@@ -1,0 +1,8 @@
+{
+  "name": "stop-vm-function",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "@yandex-cloud/nodejs-sdk": "latest"
+  }
+}
